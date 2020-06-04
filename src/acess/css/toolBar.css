@@ -1,0 +1,34 @@
+.toolBar {
+    background: #11121c;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.toolBarButton {
+    width: 15vh;
+    height: 9vh;
+    color: white;
+    margin: 0 2vh;
+    cursor: pointer;
+    padding: 2vh;
+}
+.toolBarButton svg {
+    height: 40%;
+    width: 100%;
+}
+.toolBarButton text {
+   font-size: 1vw;
+}
+
+
+
+
+.mainScreen {
+    height: 100%;
+    width: 100%;
+    background: #1d1f2d;
+}
