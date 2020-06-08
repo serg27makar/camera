@@ -1,6 +1,95 @@
 .cameraView {
     background: red;
+    height: 99%;
+    width: 98%;
+    margin: 10px;
+}
+.cameraEmpty {
     height: 96%;
+    width: 98%;
+    padding: 1%;
+}
+.addCameraButton {
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 100%;
     width: 100%;
-    margin: 0.2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plusButton {
+    font-size: 10em;
+    color: #127fee;
+}
+.textButton {
+    color: white;
+    font-size: 1.5em;
+}
+.imageCamera {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -2em;
+}
+.titleCamera {
+    color: white;
+    font-size: 1em;
+    background: black;
+    height: 2em;
+    width: 5em;
+    margin: auto;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0.5em;
+}
+.wrapTitleCamera {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+.peopleStateBar {
+    position: relative;
+    z-index: 1;
+    top: -100%;
+}
+.togglePeopleState {
+    color: white;
+    font-weight: bold;
+    background: black;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    margin: 0.5em;
+}
+.togglePeopleState.bigSize {
+    font-size: 1.2em;
+    height: 3em;
+    width: 4em;
+}
+.togglePeopleState.middleSize {
+    font-size: 0.9em;
+    height: 2.5em;
+    width: 3.4em;
+}
+.togglePeopleState.smallSize {
+    font-size: 0.6em;
+    height: 2em;
+    width: 2.7em;
+}
+.peopleStateImage {
+    height: 2em;
+    width: 5em;
+    position: absolute;
+    left: 2em;
+}
+.peopleStateIcon {
+    height: 2em;
+    width: auto;
+    opacity: 0.6;
 }
