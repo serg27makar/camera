@@ -1,7 +1,7 @@
 .toolBar {
     background: #11121c;
     width: 100%;
-    height: 10vh;
+    height: 16%;
     display: flex;
     justify-content: center;
     position: absolute;
@@ -11,24 +11,26 @@
 .toolBarButton {
     width: 15vh;
     height: 9vh;
-    color: white;
     margin: 0 2vh;
     cursor: pointer;
-    padding: 2vh;
+    padding: 2vw 2vw 1vw 2vw;
+    display: block;
 }
+.toolBarButton:hover svg,
+.toolBarButton:hover span {
+    color: aqua;
+}
+.toolBarButton.active svg,
+.toolBarButton.active span {
+    color: dodgerblue;
+}
+
 .toolBarButton svg {
     height: 40%;
     width: 100%;
+    color: white;
 }
-.toolBarButton text {
-   font-size: 1vw;
-}
-
-
-
-
-.mainScreen {
-    height: 100%;
-    width: 100%;
-    background: #1d1f2d;
+.toolBarButton span {
+    font-size: 1vw;
+    color: white;
 }

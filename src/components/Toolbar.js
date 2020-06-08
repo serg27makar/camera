@@ -1,34 +1,17 @@
 import React from 'react';
 import '../acess/css/toolBar.css'
-import {BsFillCameraVideoFill} from "react-icons/bs/index";
-import {IoIosSettings, IoIosStats} from "react-icons/io/index";
-import {FaDoorOpen, FaUserAlt} from "react-icons/fa/index";
+import toolBarButtons from "../acess/resource/toolBarButtonArr";
+import ToolbarLink from "./ToolbarLink"
+import {connect} from "react-redux";
 
-function Toolbar() {
-    return (
-        <div className="toolBar">
-            <div className="toolBarButton">
-                <BsFillCameraVideoFill/>
-                <text>камера</text>
-            </div>
-            <div className="toolBarButton">
-                <IoIosSettings/>
-                <text>настройка</text>
-            </div>
-            <div className="toolBarButton">
-                <IoIosStats/>
-                <text>статистика</text>
-            </div>
-            <div className="toolBarButton">
-                <FaUserAlt/>
-                <text>кабинет</text>
-            </div>
-            <div className="toolBarButton">
-                <FaDoorOpen/>
-                <text>выйти</text>
-            </div>
-        </div>
-    );
+class Toolbar extends React.Component {
+    render() {
+        return <ToolbarLink links={toolBarButtons} activePage={this.props.page}/>;
+    }
 }
-
-export default Toolbar;
+function MapStateToProps(state) {
+    return {
+        page: state.mainScreenInfo.page,
+    }
+}
+export default connect(MapStateToProps)(Toolbar);

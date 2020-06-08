@@ -1,0 +1,7 @@
+.mainScreen {
+    height: 80%;
+    width: 98%;
+    background: #1d1f2d;
+    display: flex;
+    padding: 1%;
+}
