@@ -3,11 +3,12 @@ import '../acess/css/cameraView.css'
 const isEmpty = false;
 const peopleToggle = {
     standing: "",
-    going: "",
+    walking: "",
     running: "",
     sitting: "",
     bentOver: "",
     moving: "",
+    resting: "",
     motionless: "",
 };
 
