@@ -1,27 +1,42 @@
 import React from 'react';
 import '../acess/css/cameraView.css'
 import camerasArr from "../acess/resource/camerasArr";
-const isEmpty = false;
-const peopleToggle = {
-    standing: "",
-    walking: "",
-    running: "",
-    sitting: "",
-    bentOver: "",
-    moving: "",
-    resting: "",
-    motionless: "",
-};
 
 class CameraView extends React.Component {
-    constructor(props) {
-        super(props);
+    state = {
+        peopleStateArr: [],
+        isViewEmpty: false,
+    };
+    componentDidMount() {
+        this.props.item && this.peopleBar();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevState.isViewEmpty !== this.props.isViewEmpty) {
+            this.setState({
+                ...this.state,
+                isViewEmpty: this.props.isViewEmpty,
+            })
+        }
+    }
+
+    peopleBar() {
+        for (const imgName in this.props.item.peopleState) {
+            const count = this.props.item.peopleState[imgName];
+            const imageUrl = "./image/" + imgName + ".svg";
+            const item = {
+                imageUrl,
+                count
+            };
+            this.state.peopleStateArr.push(item);
+        }
+
     }
 
     render() {
-        console.log(this.props);
         const styleElement = "togglePeopleState " + this.props.size;
-        if (isEmpty) {
+        console.log(this.props, this.state);
+        if (this.props.isViewEmpty) {
             return (
                 <div className="cameraEmpty">
                     <div className="addCameraButton">
@@ -32,52 +47,32 @@ class CameraView extends React.Component {
                     </div>
                 </div>
             );
-        } else {
+        } else if (this.props.item) {
             return (
                 <div className="cameraView">
                     <div className="wrapTitleCamera">
                         <div className="titleCamera">
-                            <span>{camerasArr[0].cameraName}</span>
+                            <span>{this.props.item.cameraName}</span>
                         </div>
                     </div>
-                    <img className="imageCamera" src={camerasArr[0].cameraUrl}/>
+                    <img className="imageCamera" src={this.props.item.cameraUrl}/>
                     <div className="peopleStateBar">
-                        <div className={styleElement}>85
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
-                        <div className={styleElement}>35
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
-                        <div className={styleElement}>46
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
-                        <div className={styleElement}>8
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
-                        <div className={styleElement}>805
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
-                        <div className={styleElement}>72
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
-                        <div className={styleElement}>11
-                            <div className="peopleStateImage">
-                                <img className="peopleStateIcon" src="./image/images.jpg"/>
-                            </div>
-                        </div>
+                        {this.state.peopleStateArr.map((i) => {
+                            return (
+                                <div className={styleElement} key={i.imageUrl}>{i.count}
+                                    <div className="peopleStateImage">
+                                        <img className="peopleStateIcon" src={i.imageUrl}/>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="cameraView">
+                   что-то пошло не так)))
                 </div>
             );
         }
