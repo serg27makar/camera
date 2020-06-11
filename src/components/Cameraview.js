@@ -1,5 +1,6 @@
 import React from 'react';
 import '../acess/css/cameraView.css'
+import camerasArr from "../acess/resource/camerasArr";
 const isEmpty = false;
 const peopleToggle = {
     standing: "",
@@ -36,10 +37,10 @@ class CameraView extends React.Component {
                 <div className="cameraView">
                     <div className="wrapTitleCamera">
                         <div className="titleCamera">
-                            <span>Camera 1</span>
+                            <span>{camerasArr[0].cameraName}</span>
                         </div>
                     </div>
-                    <img className="imageCamera" src='./image/images0.jpg'/>
+                    <img className="imageCamera" src={camerasArr[0].cameraUrl}/>
                     <div className="peopleStateBar">
                         <div className={styleElement}>85
                             <div className="peopleStateImage">
