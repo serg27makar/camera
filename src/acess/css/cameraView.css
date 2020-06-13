@@ -1,10 +1,4 @@
 .cameraView {
-    background: red;
-    height: 99%;
-    width: 98%;
-    margin: 10px;
-}
-.cameraEmpty {
     height: 96%;
     width: 98%;
     padding: 1%;
@@ -54,42 +48,114 @@
 .peopleStateBar {
     position: relative;
     z-index: 1;
-    top: -100%;
+    top: calc(-100% - 2vw);
 }
 .togglePeopleState {
     color: white;
-    font-weight: bold;
-    background: black;
-    border-radius: 2em;
+    background: #11121C;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 60px;
     font-family: monospace;
-    margin: 0.5em;
+    margin: 5px;
 }
 .togglePeopleState.bigSize {
-    font-size: 1.2em;
-    height: 3em;
-    width: 4em;
+    font-size: 14px;
+    height: 46px;
+    width: 64px;
 }
 .togglePeopleState.middleSize {
-    font-size: 0.9em;
-    height: 2.5em;
-    width: 3.4em;
+    font-size: 13px;
+    height: 41px;
+    width: 54px;
 }
 .togglePeopleState.smallSize {
-    font-size: 0.6em;
-    height: 2em;
-    width: 2.7em;
+    font-size: 12px;
+    height: 36px;
+    width: 44px;
 }
-.peopleStateImage {
-    height: 2em;
-    width: 5em;
+.peopleStateImage.bigSize {
     position: absolute;
-    left: 2em;
+    width: 272px;
+    height: 46px;
+    left: 6px;
+    background: rgba(29, 31, 45, 0.4);
+    border-radius: 60px;
 }
-.peopleStateIcon {
-    height: 2em;
-    width: auto;
-    opacity: 0.6;
+.peopleStateImage.middleSize {
+    position: absolute;
+    width: 154px;
+    height: 41px;
+    left: 6px;
+    background: rgba(29, 31, 45, 0.4);
+    border-radius: 60px;
+}
+.peopleStateImage.smallSize {
+    position: absolute;
+    width: 140px;
+    height: 36px;
+    left: 6px;
+    background: rgba(29, 31, 45, 0.4);
+    border-radius: 60px;
+}
+.peopleStateIcon.bigSize {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 73px;
+    top: 10px;
+}
+.peopleStateIcon.middleSize {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 68px;
+    top: 10px;
+}
+.peopleStateIcon.smallSize {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 58px;
+    top: 6px;
+}
+.peopleStateText {
+    position: absolute;
+    left: 117px;
+    top: 14px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+.peopleStateCount.bigSize {
+    position: absolute;
+    left: 228px;
+    top: 14px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+.peopleStateCount.middleSize {
+    position: absolute;
+    left: 111px;
+    top: 14px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+.peopleStateCount.smallSize {
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.01em;
 }

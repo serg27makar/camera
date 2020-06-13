@@ -3,3 +3,24 @@
     height: 100%;
     width: 100%;
 }
+.viewCameras {
+    display: flex;
+    width: 100%;
+}
+.firstCameraWithThree {
+    width: 66%;
+}
+.rightViewWithThree {
+    width: 33%;
+    height: 49%;
+}
+.sixItemView {
+    display: grid;
+    grid-template-columns: repeat(3, 33vw);
+    grid-template-rows: repeat(2, 41vh);
+}
+.eightItemView {
+    display: grid;
+    grid-template-columns: repeat(4, 24.9vw);
+    grid-template-rows: repeat(2, 36vh);
+}

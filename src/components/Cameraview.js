@@ -1,12 +1,12 @@
 import React from 'react';
 import '../acess/css/cameraView.css'
-import camerasArr from "../acess/resource/camerasArr";
 
 class CameraView extends React.Component {
     state = {
         peopleStateArr: [],
         isViewEmpty: false,
     };
+
     componentDidMount() {
         this.props.item && this.peopleBar();
     }
@@ -26,19 +26,18 @@ class CameraView extends React.Component {
             const imageUrl = "./image/" + imgName + ".svg";
             const item = {
                 imageUrl,
-                count
+                count,
+                imgName,
             };
             this.state.peopleStateArr.push(item);
         }
-
     }
 
     render() {
         const styleElement = "togglePeopleState " + this.props.size;
-        console.log(this.props, this.state);
         if (this.props.isViewEmpty) {
             return (
-                <div className="cameraEmpty">
+                <div className="cameraView">
                     <div className="addCameraButton">
                         <div>
                             <div className="plusButton">+</div>
@@ -60,8 +59,10 @@ class CameraView extends React.Component {
                         {this.state.peopleStateArr.map((i) => {
                             return (
                                 <div className={styleElement} key={i.imageUrl}>{i.count}
-                                    <div className="peopleStateImage">
-                                        <img className="peopleStateIcon" src={i.imageUrl}/>
+                                    <div className={"peopleStateImage " + this.props.size}>
+                                        <img className={"peopleStateIcon " + this.props.size} src={i.imageUrl}/>
+                                        {this.props.size === "bigSize" ?  <span className="peopleStateText">{i.imgName}</span> : null}
+                                        <span className={"peopleStateCount " + this.props.size}>{i.count}</span>
                                     </div>
                                 </div>
                             )

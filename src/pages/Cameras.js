@@ -35,37 +35,53 @@ class Cameras extends React.Component {
 
     viewThree() {
         return(
-            <div>
-                {this.state.cameras.map((item, index) => {
-                    return <CameraView item={item} key={index}/>
-                })}
-                <CameraView isViewEmpty={true}/>
+            <div className="viewCameras">
+                <div className="firstCameraWithThree">
+                    <CameraView item={this.state.cameras[0]} size={"bigSize"}/>
+                </div>
+                {this.state.cameras[1] ?
+                    <div className="rightViewWithThree">
+                        <CameraView item={this.state.cameras[1]} size={"middleSize"}/>
+                        <CameraView isViewEmpty={true}/>}
+                    </div> :
+                    <div className="rightViewWithThree">
+                        <CameraView isViewEmpty={true}/>}
+                    </div>
+                }
             </div>
         )
     }
 
     viewSix() {
-
+        return(
+            <div className="viewCameras">
+                <div className="sixItemView">
+                    {this.state.cameras.map((item, index) => {
+                        return <CameraView item={item} key={index} size={"middleSize"}/>
+                    })}
+                    <CameraView isViewEmpty={true}/>
+                </div>
+            </div>
+        )
     }
 
     viewEight() {
-
+        return(
+            <div className="viewCameras">
+                <div className="eightItemView">
+                    {this.state.cameras.map((item, index) => {
+                        return <CameraView item={item} key={index} size={"smallSize"}/>
+                    })}
+                    <CameraView isViewEmpty={true}/>
+                </div>
+            </div>
+        )
     }
 
     render() {
-
         return (
             <div className="cameraScreen">
                 {this.renderViewConstructor()}
-                {/*<div style={{minWidth: "66%"}}>*/}
-                {/*    <CameraView size={"bigSize"}/>*/}
-
-                {/*</div>*/}
-                {/*<div style={{display: "block", maxHeight: "50%", width: "100%"}}>*/}
-                {/*    <CameraView size={"middleSize"}/>*/}
-                {/*    <CameraView size={"middleSize"}/>*/}
-                {/*</div>*/}
-
             </div>
         );
     }
