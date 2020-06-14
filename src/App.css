@@ -8,5 +8,13 @@
   bottom: 0;
   right: 0;
 }
+@font-face{
+  font-family: 'Roboto';
+  src: url('/font/Roboto-Medium.ttf');
+}
+div, input, span, select, option {
+  font-family: Roboto;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {}
