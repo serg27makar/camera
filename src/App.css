@@ -10,7 +10,7 @@
 }
 @font-face{
   font-family: 'Roboto';
-  src: url('/font/Roboto-Medium.ttf');
+  src: url('/font/Roboto-Light.ttf');
 }
 div, input, span, select, option {
   font-family: Roboto;
