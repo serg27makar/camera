@@ -12,7 +12,7 @@
   font-family: 'Roboto';
   src: url('/font/Roboto-Light.ttf');
 }
-div, input, span, select, option {
+div, input, span, select, option, button {
   font-family: Roboto;
 }
 

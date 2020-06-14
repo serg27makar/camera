@@ -1,7 +1,7 @@
 .toolBar {
     background: #11121c;
     width: 100%;
-    height: 16%;
+    height: 12%;
     display: flex;
     justify-content: center;
     position: absolute;
@@ -10,7 +10,6 @@
 }
 .toolBarButton {
     width: 15vh;
-    height: 9vh;
     margin: 0 2vh;
     cursor: pointer;
     padding: 2vw 2vw 1vw 2vw;

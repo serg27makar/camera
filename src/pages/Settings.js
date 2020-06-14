@@ -18,6 +18,10 @@ class Settings extends React.Component {
                     <ValuesCritical/>
                     <CaseEmergency/>
                 </div>
+                <div className="formButtonBlock">
+                    <button className="settingsButton saveSettings">Сохранить настройки</button>
+                    <button className="settingsButton cancelSettings">Отменить</button>
+                </div>
             </div>
         );
     }
