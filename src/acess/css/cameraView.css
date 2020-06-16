@@ -1,19 +1,24 @@
 .cameraView {
-    height: 96%;
-    width: 98%;
-    padding: 1%;
+    height: calc(100% - 20px);
+    width: auto;
+    margin: 10px 5px;
+    background: #11121c;
+    border-radius: 3px;
 }
-.addCameraButton {
-    border: 2px solid white;
-    border-radius: 10px;
+.addCameraButtonWrap {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.addCameraButton {
+    border: 1px solid #5F78D3;
+    border-radius: 6px;
+    height: calc(100% - 22px);
+    width: calc(100% - 22px);
+    margin: auto;
 }
 .plusButton {
-    font-size: 10em;
+    font-size: 9em;
     color: #127fee;
 }
 .textButton {
@@ -25,11 +30,15 @@
     height: 100%;
     width: 100%;
     top: -2em;
+    border-radius: 3px;
+}
+.titleCamera span {
+    background: #1D1F2D;
 }
 .titleCamera {
     color: white;
     font-size: 1em;
-    background: black;
+    background: #1D1F2D;
     height: 2em;
     width: 5em;
     margin: auto;
@@ -75,51 +84,44 @@
     height: 36px;
     width: 44px;
 }
-.peopleStateImage.bigSize {
+
+.peopleStateImage {
     position: absolute;
-    width: 272px;
-    height: 46px;
     left: 6px;
     background: rgba(29, 31, 45, 0.4);
     border-radius: 60px;
+}
+.peopleStateImage.bigSize {
+    width: 227px;
+    height: 46px;
 }
 .peopleStateImage.middleSize {
-    position: absolute;
-    width: 154px;
+    width: 118px;
     height: 41px;
-    left: 6px;
-    background: rgba(29, 31, 45, 0.4);
-    border-radius: 60px;
 }
 .peopleStateImage.smallSize {
-    position: absolute;
-    width: 140px;
+    width: 115px;
     height: 36px;
-    left: 6px;
-    background: rgba(29, 31, 45, 0.4);
-    border-radius: 60px;
 }
-.peopleStateIcon.bigSize {
+
+.peopleStateIcon {
     position: absolute;
     width: 24px;
     height: 24px;
+}
+.peopleStateIcon.bigSize {
     left: 73px;
     top: 10px;
 }
 .peopleStateIcon.middleSize {
-    position: absolute;
-    width: 24px;
-    height: 24px;
     left: 68px;
     top: 10px;
 }
 .peopleStateIcon.smallSize {
-    position: absolute;
-    width: 24px;
-    height: 24px;
     left: 58px;
     top: 6px;
 }
+
 .peopleStateText {
     position: absolute;
     left: 117px;
@@ -129,33 +131,24 @@
     text-align: center;
     letter-spacing: -0.01em;
 }
-.peopleStateCount.bigSize {
+
+.peopleStateCount {
     position: absolute;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+.peopleStateCount.bigSize {
     left: 228px;
     top: 14px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: -0.01em;
 }
 .peopleStateCount.middleSize {
-    position: absolute;
     left: 111px;
     top: 14px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: -0.01em;
 }
 .peopleStateCount.smallSize {
-    position: absolute;
     left: 100px;
     top: 10px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: -0.01em;
 }

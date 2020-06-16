@@ -9,18 +9,24 @@
 }
 .firstCameraWithThree {
     width: 66%;
+    margin-left: 20px;
 }
 .rightViewWithThree {
-    width: 33%;
-    height: 49%;
+    width: 34%;
+    margin-right: 20px;
+}
+.rightViewWithThree .cameraView {
+    height: calc(50% - 14px);
 }
 .sixItemView {
     display: grid;
     grid-template-columns: repeat(3, 33vw);
     grid-template-rows: repeat(2, 41vh);
+    margin: 0 auto;
 }
 .eightItemView {
     display: grid;
     grid-template-columns: repeat(4, 24.9vw);
     grid-template-rows: repeat(2, 36vh);
+    margin: 0 auto;
 }

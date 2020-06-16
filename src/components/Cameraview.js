@@ -38,8 +38,8 @@ class CameraView extends React.Component {
         if (this.props.isViewEmpty) {
             return (
                 <div className="cameraView">
-                    <div className="addCameraButton">
-                        <div>
+                    <div className="addCameraButtonWrap">
+                        <div className="addCameraButton">
                             <div className="plusButton">+</div>
                             <div className="textButton">Добавить камеру</div>
                         </div>
@@ -62,7 +62,6 @@ class CameraView extends React.Component {
                                     <div className={"peopleStateImage " + this.props.size}>
                                         <img className={"peopleStateIcon " + this.props.size} src={i.imageUrl}/>
                                         {this.props.size === "bigSize" ?  <span className="peopleStateText">{i.imgName}</span> : null}
-                                        <span className={"peopleStateCount " + this.props.size}>{i.count}</span>
                                     </div>
                                 </div>
                             )

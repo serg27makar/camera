@@ -1,12 +1,8 @@
 .App {
   text-align: center;
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 @font-face{
   font-family: 'Roboto';
@@ -15,6 +11,9 @@
 div, input, span, select, option, button {
   font-family: Roboto;
 }
-
+body {
+  min-width: 1280px;
+  min-height: 780px;
+}
 
 @media (prefers-reduced-motion: no-preference) {}

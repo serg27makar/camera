@@ -17,6 +17,7 @@
     color: white;
     display: flex;
     justify-content: center;
+    height: 70vh;
 }
 .chooseCamera {
 
