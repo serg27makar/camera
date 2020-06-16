@@ -1,21 +1,23 @@
 .cameraView {
-    height: calc(100% - 20px);
-    width: auto;
-    margin: 10px 5px;
-    background: #11121c;
-    border-radius: 3px;
-}
-.addCameraButtonWrap {
     height: 100%;
     width: 100%;
+    border-radius: 3px;
+    position: relative;
+}
+.addCameraButtonWrap {
     display: flex;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    background: #11121C;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 5px;
 }
 .addCameraButton {
     border: 1px solid #5F78D3;
     border-radius: 6px;
-    height: calc(100% - 22px);
-    width: calc(100% - 22px);
-    margin: auto;
+    height: 100%;
+    width: 100%;
 }
 .plusButton {
     font-size: 9em;
@@ -26,11 +28,12 @@
     font-size: 1.5em;
 }
 .imageCamera {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    top: -2em;
-    border-radius: 3px;
+    position: absolute;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    top: 5px;
+    border-radius: 5px;
+    left: 5px;
 }
 .titleCamera span {
     background: #1D1F2D;
@@ -55,9 +58,10 @@
     z-index: 1;
 }
 .peopleStateBar {
-    position: relative;
+    position: absolute;
     z-index: 1;
-    top: calc(-100% - 2vw);
+    top: 10px;
+    left: 10px;
 }
 .togglePeopleState {
     color: white;

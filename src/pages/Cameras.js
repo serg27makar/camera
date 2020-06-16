@@ -36,18 +36,20 @@ class Cameras extends React.Component {
     viewThree() {
         return(
             <div className="viewCameras">
-                <div className="firstCameraWithThree">
-                    <CameraView item={this.state.cameras[0]} size={"bigSize"}/>
-                </div>
-                {this.state.cameras[1] ?
-                    <div className="rightViewWithThree">
-                        <CameraView item={this.state.cameras[1]} size={"middleSize"}/>
-                        <CameraView isViewEmpty={true}/>}
-                    </div> :
-                    <div className="rightViewWithThree">
-                        <CameraView isViewEmpty={true}/>}
+                <div className="threeItemView">
+                    <div className="firstCameraWithThree">
+                        <CameraView item={this.state.cameras[0]} size={"bigSize"}/>
                     </div>
-                }
+                    {this.state.cameras[1] ?
+                        <div className="rightViewWithThree">
+                            <CameraView item={this.state.cameras[1]} size={"middleSize"}/>
+                            <CameraView isViewEmpty={true}/>
+                        </div> :
+                        <div className="rightViewWithThree">
+                            <CameraView isViewEmpty={true}/>
+                        </div>
+                    }
+                </div>
             </div>
         )
     }
