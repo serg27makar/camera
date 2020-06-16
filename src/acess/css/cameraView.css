@@ -156,3 +156,19 @@
     left: 100px;
     top: 10px;
 }
+
+.btnOptionBlock {
+    width: 49px;
+    height: 49px;
+    background: #1D1F2D;
+    border-radius: 50%;
+    margin: 3px;
+    color: white;
+}
+.btnOptionBlockWrap {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    right: 30px;
+    top: 30px;
+}
