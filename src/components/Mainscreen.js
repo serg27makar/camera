@@ -8,15 +8,24 @@ import Statistic from "../pages/Statistic";
 import Cabinet from "../pages/Cabinet";
 import Logout from "../pages/Logout";
 import Toolbar from "./Toolbar";
+import AddCameraModal from "./modals/AddCameraModal";
+import {connect} from "react-redux";
+import RemoveCameraModal from "./modals/RemoveCameraModal";
 
 const history = createBrowserHistory();
 
-class MainScreen extends React.Component{
+class MainScreen extends React.Component {
 
     render() {
         return (
             <div className="mainScreen">
-                <Navigate/>
+                <div className={this.props.addModal || this.props.removeModal ? "wrapScreen blurScreen" : "wrapScreen"}>
+                    <Navigate/>
+                </div>
+                <div className="modalBlock">
+                    <RemoveCameraModal/>
+                    <AddCameraModal/>
+                </div>
             </div>
         );
     }
@@ -40,4 +49,11 @@ class Navigate extends React.Component {
     }
 }
 
-export default MainScreen;
+function MapStateToProps(state) {
+    return {
+        addModal: state.modalReducer.addModal,
+        removeModal: state.modalReducer.removeModal,
+    }
+}
+
+export default connect(MapStateToProps)(MainScreen);

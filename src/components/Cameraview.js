@@ -1,8 +1,12 @@
 import React from 'react';
 import '../acess/css/cameraView.css'
-import {setActionAddCamera, setActionRemoveCamera} from "../action";
+import {
+    actionOpenCloseAddModal,
+    actionOpenCloseRemoveModal,
+    actionRemoveCamera,
+    actionSetCamera,
+} from "../action";
 import {connect} from "react-redux";
-import camerasArr from "../acess/resource/camerasArr";
 
 class CameraView extends React.Component {
     constructor(props) {
@@ -12,7 +16,6 @@ class CameraView extends React.Component {
             isViewEmpty: false,
         };
     }
-
 
     componentDidMount() {
         this.props.item && this.peopleBar();
@@ -27,32 +30,13 @@ class CameraView extends React.Component {
         }
     }
 
-    addCamera() {
-        const lengthCamerasArr = this.props.cameras.length;
-        console.log(this)
-        const currentArr = [];
-        if (camerasArr.length > lengthCamerasArr) {
-            for (let i in camerasArr) {
-                if (i <= lengthCamerasArr) {
-                    currentArr.push(camerasArr[i]);
-                }
-            }
-            this.props.setActionAddCameraFunction(currentArr);
-        }
+    removeCamera(remCamera) {
+        this.props.removeCameraFunction(remCamera);
+        this.props.openRemoveCameraModalFunction();
     }
 
-    // removeCamera(_this) {
-    //     this.props.setActionRemoveCameraFunction();
-    // }
-
-    removeCamera() {
-        const currentArr = this.props.cameras;
-        if (currentArr.length > 0) {
-            currentArr.pop();
-        }
-        this.props.setActionAddCameraFunction(currentArr);
-    }
     peopleBar() {
+        const peopleStateArr = [];
         for (const imgName in this.props.item.peopleState) {
             const count = this.props.item.peopleState[imgName];
             const imageUrl = "./image/" + imgName + ".svg";
@@ -61,8 +45,11 @@ class CameraView extends React.Component {
                 count,
                 imgName,
             };
-            this.state.peopleStateArr.push(item);
+            peopleStateArr.push(item);
         }
+        this.setState({
+            peopleStateArr
+        })
     }
 
     render() {
@@ -70,7 +57,7 @@ class CameraView extends React.Component {
         if (this.props.isViewEmpty) {
             return (
                 <div className="cameraView">
-                    <div className="addCameraButtonWrap" onClick={() => this.addCamera()}>
+                    <div className="addCameraButtonWrap" onClick={() => this.props.openAddCameraModalFunction()}>
                         <div className="addCameraButton">
                             <div className="plusButton">+</div>
                             <div className="textButton">Добавить камеру</div>
@@ -88,7 +75,7 @@ class CameraView extends React.Component {
                     </div>
                     <div className="btnOptionBlockWrap">
                         <div className="btnOptionBlock editBtn">o</div>
-                        <div className="btnOptionBlock removeBtn" onClick={() => this.removeCamera()}>x</div>
+                        <div className="btnOptionBlock removeBtn" onClick={() => this.removeCamera(this.props.item)}>x</div>
                     </div>
                     <img className="imageCamera" src={this.props.item.cameraUrl}/>
                     <div className="peopleStateBar">
@@ -123,11 +110,17 @@ function MapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setActionAddCameraFunction: (camera) => {
-            dispatch(setActionAddCamera(camera))
+        setCameraFunction: (camera) => {
+            dispatch(actionSetCamera(camera))
         },
-        setActionRemoveCameraFunction: (camera) => {
-            dispatch(setActionRemoveCamera(camera))
+        removeCameraFunction: (item) => {
+            dispatch(actionRemoveCamera(item))
+        },
+        openAddCameraModalFunction: () => {
+            dispatch(actionOpenCloseAddModal())
+        },
+        openRemoveCameraModalFunction: () => {
+            dispatch(actionOpenCloseRemoveModal())
         },
     }
 };

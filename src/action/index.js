@@ -4,15 +4,25 @@ export const setActionMainScreen = (page) => {
         page: page
     }
 };
-export const setActionAddCamera = (camera) => {
+export const actionSetCamera = (camera) => {
     return {
-        type: 'ADD_CAMERA',
+        type: 'SET_CAMERA',
         camera: camera
     }
 };
-export const setActionRemoveCamera = (camera) => {
+export const actionRemoveCamera = (remCamera) => {
     return {
         type: 'REMOVE_CAMERA',
-        camera: camera
+        remCamera: remCamera
+    }
+};
+export const actionOpenCloseAddModal = () => {
+    return {
+        type: 'OPEN_CLOSE_ADD_MODAL'
+    }
+};
+export const actionOpenCloseRemoveModal = () => {
+    return {
+        type: 'OPEN_CLOSE_REMOVE_MODAL'
     }
 };

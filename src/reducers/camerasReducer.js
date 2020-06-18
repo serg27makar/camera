@@ -1,11 +1,12 @@
 const initialState = {
     cameras: [],
+    remCamera: {},
 };
 
 export default function cameraReducer(state = initialState, action) {
 
     switch (action.type) {
-        case "ADD_CAMERA":
+        case "SET_CAMERA":
             return {
                 ...state,
                 cameras: action.camera
@@ -13,7 +14,7 @@ export default function cameraReducer(state = initialState, action) {
         case "REMOVE_CAMERA":
             return {
                 ...state,
-                cameras: action.camera
+                remCamera: action.remCamera
             };
         default:
             return state;
