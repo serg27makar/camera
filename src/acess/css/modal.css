@@ -43,6 +43,7 @@
     margin: auto;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 .warningText {
     color: red;

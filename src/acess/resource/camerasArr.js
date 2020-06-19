@@ -19,7 +19,7 @@ const camerasArr = [
         cameraName: "Camera 2",
         cameraUrl: "./image/images1.jpg",
         peopleState: {
-            standing: 10,
+            standing: 11,
             walking: 20,
             running: 3,
             sitting: 400,
@@ -33,7 +33,7 @@ const camerasArr = [
         cameraName: "Camera 3",
         cameraUrl: "./image/images2.jpg",
         peopleState: {
-            standing: 10,
+            standing: 12,
             walking: 20,
             running: 3,
             sitting: 400,
@@ -47,7 +47,7 @@ const camerasArr = [
         cameraName: "Camera 4",
         cameraUrl: "./image/images3.jpg",
         peopleState: {
-            standing: 10,
+            standing: 13,
             walking: 20,
             running: 3,
             sitting: 400,
@@ -61,7 +61,7 @@ const camerasArr = [
         cameraName: "Camera 5",
         cameraUrl: "./image/images4.jpg",
         peopleState: {
-            standing: 10,
+            standing: 14,
             walking: 20,
             running: 3,
             sitting: 400,
@@ -75,7 +75,7 @@ const camerasArr = [
         cameraName: "Camera 6",
         cameraUrl: "./image/images0.jpg",
         peopleState: {
-            standing: 10,
+            standing: 15,
             walking: 20,
             running: 3,
             sitting: 400,
@@ -89,7 +89,7 @@ const camerasArr = [
         cameraName: "Camera 7",
         cameraUrl: "./image/images1.jpg",
         peopleState: {
-            standing: 10,
+            standing: 16,
             walking: 20,
             running: 3,
             sitting: 400,

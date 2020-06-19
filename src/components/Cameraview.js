@@ -28,6 +28,9 @@ class CameraView extends React.Component {
                 isViewEmpty: this.props.isViewEmpty,
             })
         }
+        if (prevProps.item !== this.props.item) {
+            this.peopleBar();
+        }
     }
 
     removeCamera(remCamera) {
@@ -59,8 +62,10 @@ class CameraView extends React.Component {
                 <div className="cameraView">
                     <div className="addCameraButtonWrap" onClick={() => this.props.openAddCameraModalFunction()}>
                         <div className="addCameraButton">
-                            <div className="plusButton">+</div>
-                            <div className="textButton">Добавить камеру</div>
+                            <div className="addBtnBlock">
+                                <div className="plusButton">+</div>
+                                <div className="textButton">Добавить камеру</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,13 +74,17 @@ class CameraView extends React.Component {
             return (
                 <div className="cameraView">
                     <div className="wrapTitleCamera">
-                        <div className="titleCamera">
+                        <div className={"titleCamera " + this.props.size}>
                             <span>{this.props.item.cameraName}</span>
                         </div>
                     </div>
                     <div className="btnOptionBlockWrap">
-                        <div className="btnOptionBlock editBtn">o</div>
-                        <div className="btnOptionBlock removeBtn" onClick={() => this.removeCamera(this.props.item)}>x</div>
+                        <div className={"btnOptionBlock " + this.props.size}>
+                            <img className={"btnOptionImg " + this.props.size} src="./image/pen.svg"/>
+                        </div>
+                        <div className={"btnOptionBlock " + this.props.size} onClick={() => this.removeCamera(this.props.item)}>
+                            <span className={"removeCameraBtn " + this.props.size}>+</span>
+                        </div>
                     </div>
                     <img className="imageCamera" src={this.props.item.cameraUrl}/>
                     <div className="peopleStateBar">
