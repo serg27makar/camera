@@ -18,6 +18,12 @@
     border-radius: 6px;
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addBtnBlock {
+    cursor: pointer;
 }
 .plusButton {
     font-size: 9em;
@@ -38,14 +44,26 @@
 .titleCamera span {
     background: #1D1F2D;
 }
+
+.titleCamera.bigSize {
+    height: 36px;
+    width: 131px;
+}
+.titleCamera.middleSize {
+    height: 36px;
+    width: 131px;
+}
+.titleCamera.smallSize {
+    height: 32px;
+    width: 104px;
+}
+
 .titleCamera {
     color: white;
     font-size: 1em;
     background: #1D1F2D;
-    height: 2em;
-    width: 5em;
     margin: auto;
-    border-radius: 1em;
+    border-radius: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,12 +98,12 @@
 }
 .togglePeopleState.middleSize {
     font-size: 13px;
-    height: 41px;
+    height: 32px;
     width: 54px;
 }
 .togglePeopleState.smallSize {
     font-size: 12px;
-    height: 36px;
+    height: 27px;
     width: 44px;
 }
 
@@ -101,11 +119,11 @@
 }
 .peopleStateImage.middleSize {
     width: 118px;
-    height: 41px;
+    height: 32px;
 }
 .peopleStateImage.smallSize {
-    width: 115px;
-    height: 36px;
+    width: 89px;
+    height: 27px;
 }
 
 .peopleStateIcon {
@@ -119,11 +137,11 @@
 }
 .peopleStateIcon.middleSize {
     left: 68px;
-    top: 10px;
+    top: 3px;
 }
 .peopleStateIcon.smallSize {
-    left: 58px;
-    top: 6px;
+    left: 51px;
+    top: 1px;
 }
 
 .peopleStateText {
@@ -156,19 +174,60 @@
     left: 100px;
     top: 10px;
 }
-
-.btnOptionBlock {
+.btnOptionBlock.bigSize {
+    padding: 10px;
     width: 49px;
     height: 49px;
+}
+.btnOptionBlock.middleSize {
+    padding: 7px;
+    width: 36x;
+    height: 36px;
+}
+.btnOptionBlock.smallSize {
+    width: 32px;
+    height: 32px;
+}
+.btnOptionBlock {
     background: #1D1F2D;
     border-radius: 50%;
     margin: 3px;
     color: white;
+    cursor: pointer;
 }
 .btnOptionBlockWrap {
     position: absolute;
     z-index: 1;
     display: flex;
-    right: 30px;
-    top: 30px;
+    right: 20px;
+    top: 10px;
+}
+.btnOptionImg.bigSize {
+
+}
+.btnOptionImg.middleSize {
+    height: 22px;
+    width: 22px;
+}
+.btnOptionImg.smallSize {
+    height: 30px;
+    width: 20px;
+}
+.removeCameraBtn.middleSize {
+    top: -10px;
+    left: 0;
+    font-size: 32px;
+}
+.removeCameraBtn.smallSize {
+    left: 0;
+    font-size: 28px;
+    top: -2px;
+}
+.removeCameraBtn {
+    font-size: 36px;
+    transform: rotate(45deg);
+    display: block;
+    position: relative;
+    top: -8px;
+    left: 1px;
 }
