@@ -1,6 +1,7 @@
 const initialState = {
     addModal: false,
     removeModal: false,
+    saveChangeModal: false
 };
 
 export default function modalReducer(state = initialState, action) {
@@ -15,6 +16,11 @@ export default function modalReducer(state = initialState, action) {
             return {
                 ...state,
                 removeModal: !state.removeModal
+            };
+        case "SAVE_CHANGE_MODAL":
+            return {
+                ...state,
+                saveChangeModal: !state.saveChangeModal
             };
         default:
             return state;

@@ -26,3 +26,8 @@ export const actionOpenCloseRemoveModal = () => {
         type: 'OPEN_CLOSE_REMOVE_MODAL'
     }
 };
+export const actionOpenCloseSaveChangeModal = () => {
+    return {
+        type: 'SAVE_CHANGE_MODAL'
+    }
+};

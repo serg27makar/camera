@@ -22,9 +22,6 @@ class Cameras extends React.Component {
         }
     }
 
-
-
-
     renderViewConstructor(cameras) {
         if (cameras.length === 0) {
             return this.viewOnce();

@@ -1,25 +1,43 @@
 import React from 'react';
 import '../access/css/settings.css'
 import {connect} from "react-redux";
-import {setActionMainScreen} from "../action"
+import {actionOpenCloseSaveChangeModal, setActionMainScreen} from "../action"
 import ToggleBlock from "./ToggleBlock";
 
 class ChooseCamera extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            isToggleStateChange: false,
             toggleState: {}
         };
         this.onChangeCamera = this.onChangeCamera.bind(this);
+        this.changeCamera = this.changeCamera.bind(this);
+        this.toggleStateChange = this.toggleStateChange.bind(this);
     }
 
     componentDidMount() {
         this.props.setActionMainScreenFunction("settings")
     }
 
+    toggleStateChange(isChange) {
+        this.setState({
+            ...this.state,
+            isToggleStateChange: isChange
+        })
+    }
+
     onChangeCamera(e) {
+        if (this.state.isToggleStateChange) {
+            this.props.openSaveChangeModalFunction();
+        } else {
+            this.changeCamera(e.target.value);
+        }
+    }
+
+    changeCamera(val) {
         this.props.cameras.map((camera) => {
-            if (camera.cameraName === e.target.value) {
+            if (camera.cameraName === val) {
                 this.setState({
                     toggleState: camera.peopleState
                 })
@@ -38,7 +56,7 @@ class ChooseCamera extends React.Component {
                     })}
                 </select>
                 <span className="titleSettingsBlock">Отображение характеристик на экране</span>
-                <ToggleBlock toggleState={this.state.toggleState}/>
+                <ToggleBlock toggleState={this.state.toggleState} toggleStateChange={this.toggleStateChange}/>
             </div>
         );
     }
@@ -53,6 +71,9 @@ const mapDispatchToProps = dispatch => {
     return{
         setActionMainScreenFunction: (page) => {
             dispatch(setActionMainScreen(page))
+        },
+        openSaveChangeModalFunction: () => {
+            dispatch(actionOpenCloseSaveChangeModal())
         },
     }
 };

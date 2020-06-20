@@ -38,6 +38,7 @@ class ToggleBlock extends React.Component{
     }
 
     changeToggleState(name) {
+        this.props.toggleStateChange(true);
         this.setState( state => {
             this.state.toggleStateArr[name] = !this.state.toggleStateArr[name];
             return state

@@ -13,6 +13,7 @@ import {connect} from "react-redux";
 import RemoveCameraModal from "./modals/RemoveCameraModal";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
+import SavePeopleStateModal from "./modals/SavePeopleStateModal";
 
 const history = createBrowserHistory();
 
@@ -21,12 +22,13 @@ class MainScreen extends React.Component {
     render() {
         return (
             <div className="mainScreen">
-                <div className={this.props.addModal || this.props.removeModal ? "wrapScreen blurScreen" : "wrapScreen"}>
+                <div className={this.props.addModal || this.props.removeModal || this.props.saveChangeModal ? "wrapScreen blurScreen" : "wrapScreen"}>
                     <Navigate/>
                 </div>
                 <div className="modalBlock">
                     <RemoveCameraModal/>
                     <AddCameraModal/>
+                    <SavePeopleStateModal/>
                 </div>
             </div>
         );
@@ -57,6 +59,7 @@ function MapStateToProps(state) {
     return {
         addModal: state.modalReducer.addModal,
         removeModal: state.modalReducer.removeModal,
+        saveChangeModal: state.modalReducer.saveChangeModal,
     }
 }
 
