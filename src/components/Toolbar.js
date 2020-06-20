@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 
 class Toolbar extends React.Component {
     render() {
+        if (this.props.page === "login" || this.props.page === "registration") return null;
         return <ToolbarLink links={toolBarButtons} activePage={this.props.page}/>;
     }
 }

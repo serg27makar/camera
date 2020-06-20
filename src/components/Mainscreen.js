@@ -11,6 +11,8 @@ import Toolbar from "./Toolbar";
 import AddCameraModal from "./modals/AddCameraModal";
 import {connect} from "react-redux";
 import RemoveCameraModal from "./modals/RemoveCameraModal";
+import Login from "../pages/Login";
+import Registration from "../pages/Registration";
 
 const history = createBrowserHistory();
 
@@ -36,7 +38,9 @@ class Navigate extends React.Component {
         return (
             <Router history={history}>
                 <div className="routers">
-                    <Route exact path='/' component={Cameras}/>
+                    <Route exact path='/' component={Login}/>
+                    <Route path='/login' component={Login}/>
+                    <Route path='/registration' component={Registration}/>
                     <Route path='/camera' component={Cameras}/>
                     <Route path='/settings' component={Settings}/>
                     <Route path='/statistic' component={Statistic}/>
