@@ -1,5 +1,5 @@
 import React from 'react';
-import '../acess/css/cabinet.css'
+import '../access/css/cabinet.css'
 import {connect} from "react-redux";
 import {setActionMainScreen} from "../action"
 

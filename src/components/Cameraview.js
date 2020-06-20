@@ -1,5 +1,5 @@
 import React from 'react';
-import '../acess/css/cameraView.css'
+import '../access/css/cameraView.css'
 import {
     actionOpenCloseAddModal,
     actionOpenCloseRemoveModal,
@@ -39,20 +39,22 @@ class CameraView extends React.Component {
     }
 
     peopleBar() {
-        const peopleStateArr = [];
-        for (const imgName in this.props.item.peopleState) {
-            const count = this.props.item.peopleState[imgName];
-            const imageUrl = "./image/" + imgName + ".svg";
-            const item = {
-                imageUrl,
-                count,
-                imgName,
-            };
-            peopleStateArr.push(item);
+        if (this.props.item) {
+            const peopleStateArr = [];
+            for (const imgName in this.props.item.peopleState) {
+                const count = this.props.item.peopleState[imgName];
+                const imageUrl = "./image/" + imgName + ".svg";
+                const item = {
+                    imageUrl,
+                    count,
+                    imgName,
+                };
+                peopleStateArr.push(item);
+            }
+            this.setState({
+                peopleStateArr
+            })
         }
-        this.setState({
-            peopleStateArr
-        })
     }
 
     render() {

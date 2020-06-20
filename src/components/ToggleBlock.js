@@ -1,52 +1,71 @@
 import React from "react";
-import '../acess/css/settings.css'
+import '../access/css/settings.css'
+import { toggleStateArr } from "../access/constants"
 
 class ToggleBlock extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            toggleState: {},
+            toggleStateArr: {
+                standing: false,
+                walking: false,
+                running: false,
+                sitting: false,
+                bentOver: false,
+                moving: false,
+                resting: false,
+                motionless: false,
+            }
+        }
+    }
+
+    componentDidMount() {}
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.toggleState !== this.props.toggleState) {
+            this.setState( state => {
+                toggleStateArr.map((name) => {
+                    this.state.toggleStateArr[name] = this.checkEnableToggle(name)
+                });
+                return state
+            });
+        }
+    }
+
+    checkEnableToggle(toggle) {
+        return !!this.props.toggleState[toggle];
+    }
+
+    changeToggleState(name) {
+        this.setState( state => {
+            this.state.toggleStateArr[name] = !this.state.toggleStateArr[name];
+            return state
+        })
+    }
+
+    renderToggle(toggle) {
+        return (
+            <label className="checkBoxLabel" key={toggle}>
+                <input type="checkbox" name={toggle} style={{display: "none"}}
+                       checked={this.state.toggleStateArr[toggle]}
+                       onChange={() => {this.changeToggleState(toggle)}}
+                />
+                <span className="toggle"/>
+                <span className="checkboxText">{toggle}</span>
+            </label>
+        )
+    }
+
     render() {
         return(
             <div>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="standing" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">standing</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="walking" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">walking</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="running" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">running</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="sitting" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">sitting</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="bentOver" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">bentOver</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="moving" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">moving</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="resting" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">resting</span>
-                </label>
-                <label className="checkBoxLabel">
-                    <input type="checkbox" value="1" name="motionless" style={{display: "none"}}/>
-                    <span className="toggle"/>
-                    <span className="checkboxText">motionless</span>
-                </label>
+                {toggleStateArr.map((toggle) => {
+                    return this.renderToggle(toggle);
+                })}
             </div>
         );
     }
 }
+
 export default ToggleBlock;

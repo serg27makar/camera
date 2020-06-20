@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../acess/css/modal.css'
+import '../../access/css/modal.css'
 import {connect} from "react-redux";
 import {actionOpenCloseRemoveModal, actionSetCamera} from "../../action"
 

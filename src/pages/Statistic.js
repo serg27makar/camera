@@ -1,5 +1,5 @@
 import React from 'react';
-import '../acess/css/statistic.css'
+import '../access/css/statistic.css'
 import {connect} from "react-redux";
 import {setActionMainScreen} from "../action"
 

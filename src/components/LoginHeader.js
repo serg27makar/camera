@@ -1,6 +1,7 @@
 import React from 'react';
-import '../acess/css/login.css'
+import '../access/css/login.css'
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 class LoginHeader extends React.Component {
     render() {
@@ -19,8 +20,8 @@ class LoginHeader extends React.Component {
                 </div>
                 <div className="aboutService">О сервисе</div>
                 <div className="aboutService">Часто задаваемые вопросы</div>
-                <button className="loginBtn">Войти</button>
-                <button className="registerBtn">Зарегистрироваться</button>
+                <Link to={"/login"}><div className="loginBtn">Войти</div></Link>
+                <Link to={"/registration"}><div className="registerBtn">Зарегистрироваться</div></Link>
             </div>
         );
     }

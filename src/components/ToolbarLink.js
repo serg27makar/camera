@@ -1,5 +1,5 @@
 import React from 'react';
-import '../acess/css/toolBar.css'
+import '../access/css/toolBar.css'
 import {Link} from "react-router-dom";
 
 class ToolbarLink extends React.Component {

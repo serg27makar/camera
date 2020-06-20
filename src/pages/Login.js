@@ -1,14 +1,16 @@
 import React from 'react';
-import '../acess/css/login.css'
+import '../access/css/login.css'
 import {connect} from "react-redux";
 import {setActionMainScreen} from "../action";
 import LoginHeader from "../components/LoginHeader";
+import {Link} from "react-router-dom";
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
         };
+        this.submit = this.submit.bind(this);
     }
 
     componentDidMount() {
@@ -16,6 +18,11 @@ class Login extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {}
+
+    submit() {
+        console.log("this", this)
+        this.props.history.push("/camera")
+    }
 
     render() {
         return (
@@ -32,8 +39,9 @@ class Login extends React.Component {
                         <input className="formInput" type="password" name="password" placeholder="password"/>
                     </label>
                     <span className="forgetText">Забыли пароль?</span>
-                    <button className="submitBtn">Войти в личный кабинет</button>
-                    <div className="footerText">Еще не зарегистрированы?<em> Регистрация</em></div>
+                    <button className="submitBtn" onClick={this.submit}>Войти в личный кабинет</button>
+                    <div className="footerText">Еще не зарегистрированы?<Link to={"/registration"}><em> Регистрация</em></Link></div>
+
                 </div>
             </div>
         );

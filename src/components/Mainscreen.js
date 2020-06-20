@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, Route} from 'react-router-dom'
 import {createBrowserHistory} from 'history'
-import '../acess/css/mainScreen.css'
+import '../access/css/mainScreen.css'
 import Settings from "../pages/Settings";
 import Cameras from "../pages/Cameras";
 import Statistic from "../pages/Statistic";

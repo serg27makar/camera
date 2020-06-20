@@ -1,5 +1,5 @@
 import React from 'react';
-import '../acess/css/cameras.css'
+import '../access/css/cameras.css'
 import {connect} from "react-redux";
 import {setActionMainScreen} from "../action"
 import CameraView from "../components/Cameraview";

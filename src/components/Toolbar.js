@@ -1,6 +1,6 @@
 import React from 'react';
-import '../acess/css/toolBar.css'
-import toolBarButtons from "../acess/resource/toolBarButtonArr";
+import '../access/css/toolBar.css'
+import toolBarButtons from "../access/resource/toolBarButtonArr";
 import ToolbarLink from "./ToolbarLink"
 import {connect} from "react-redux";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../acess/css/settings.css'
+import '../access/css/settings.css'
 import {connect} from "react-redux";
 import {setActionMainScreen} from "../action"
 import CaseEmergency from "../components/CaseEmergency"

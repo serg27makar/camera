@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../acess/css/modal.css'
+import '../../access/css/modal.css'
 import {connect} from "react-redux";
 import {actionOpenCloseAddModal, actionSetCamera, setActionMainScreen} from "../../action"
-import camerasArr from "../../acess/resource/camerasArr";
+import camerasArr from "../../access/resource/camerasArr";
 
 class AddCameraModal extends React.Component {
 
