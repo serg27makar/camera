@@ -88,19 +88,19 @@ class CameraView extends React.Component {
                     </div>
                     <div className="btnOptionBlockWrap">
                         <div className={"btnOptionBlock " + this.props.size} onClick={() => this.optionCamera(this.props.item)}>
-                            <img className={"btnOptionImg " + this.props.size} src="./image/pen.svg"/>
+                            <img className={"btnOptionImg " + this.props.size} src="./image/pen.svg" alt="option"/>
                         </div>
                         <div className={"btnOptionBlock " + this.props.size} onClick={() => this.removeCamera(this.props.item)}>
                             <span className={"removeCameraBtn " + this.props.size}>+</span>
                         </div>
                     </div>
-                    <img className="imageCamera" src={this.props.item.cameraUrl}/>
+                    <img className="imageCamera" src={this.props.item.cameraUrl} alt="camera"/>
                     <div className="peopleStateBar">
                         {this.state.peopleStateArr.map((i) => {
                             return (
                                 <div className={styleElement} key={i.imageUrl}>{i.count}
                                     <div className={"peopleStateImage " + this.props.size}>
-                                        <img className={"peopleStateIcon " + this.props.size} src={i.imageUrl}/>
+                                        <img className={"peopleStateIcon " + this.props.size} src={i.imageUrl} alt="state icon"/>
                                         {this.props.size === "bigSize" ?  <span className="peopleStateText">{i.imgName}</span> : null}
                                     </div>
                                 </div>

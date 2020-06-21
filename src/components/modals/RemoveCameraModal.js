@@ -15,10 +15,11 @@ class RemoveCameraModal extends React.Component {
     removeCamera() {
         const currentArr = [];
         if (this.props.cameras.length > 0) {
-            this.props.cameras.map((camera) => {
+            this.props.cameras.map(camera => {
                 if (this.props.remCamera.cameraName !== camera.cameraName) {
                     currentArr.push(camera);
                 }
+                return camera;
             });
         }
         this.props.setCameraFunction(currentArr);

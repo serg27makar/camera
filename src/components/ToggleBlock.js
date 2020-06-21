@@ -26,10 +26,21 @@ class ToggleBlock extends React.Component{
         if (prevProps.toggleState !== this.props.toggleState) {
             this.setState( state => {
                 toggleStateArr.map((name) => {
-                    this.state.toggleStateArr[name] = this.checkEnableToggle(name)
+                    this.state.toggleStateArr[name] = this.checkEnableToggle(name);
+                    return name;
                 });
                 return state
             });
+
+            // toggleStateArr.map((name) => {
+            //     this.setState({
+            //         ...this.state,
+            //         toggleStateArr: {
+            //             ...this.state.toggleStateArr,
+            //             [name]: this.checkEnableToggle(name),
+            //         }
+            //     });
+            // })
         }
     }
 
@@ -39,9 +50,12 @@ class ToggleBlock extends React.Component{
 
     changeToggleState(name) {
         this.props.toggleStateChange(true);
-        this.setState( state => {
-            this.state.toggleStateArr[name] = !this.state.toggleStateArr[name];
-            return state
+        this.setState({
+            ...this.state,
+            toggleStateArr: {
+                ...this.state.toggleStateArr,
+                [name]: !this.state.toggleStateArr[name],
+            }
         })
     }
 

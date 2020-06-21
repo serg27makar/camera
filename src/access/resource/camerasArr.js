@@ -1,5 +1,3 @@
-import React from "react";
-
 const camerasArr = [
     {
         cameraName: "Camera 1",

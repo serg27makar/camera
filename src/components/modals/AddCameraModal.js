@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../access/css/modal.css'
 import {connect} from "react-redux";
-import {actionOpenCloseAddModal, actionSetCamera, setActionMainScreen} from "../../action"
+import {actionOpenCloseAddModal, actionSetCamera} from "../../action"
 import camerasArr from "../../access/resource/camerasArr";
 import {isEmptyObject} from "../../access/resource/functionLib";
 
@@ -60,7 +60,10 @@ class AddCameraModal extends React.Component {
     renderCameraName(camera) {
         let isHidden = false;
         this.props.cameras.map((item) => {
-            if (camera.cameraName === item.cameraName) isHidden = true;
+            if (camera.cameraName === item.cameraName) {
+                isHidden = true;
+            }
+            return item;
         });
         if (!isHidden) {
             return <span

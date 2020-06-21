@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../access/css/modal.css'
 import {connect} from "react-redux";
-import {actionOpenCloseSaveChangeModal, actionSetCamera} from "../../action"
+import {actionOpenCloseSaveChangeModal} from "../../action"
 
 class SavePeopleStateModal extends React.Component {
 

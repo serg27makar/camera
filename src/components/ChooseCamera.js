@@ -56,6 +56,7 @@ class ChooseCamera extends React.Component {
             if (camera.cameraName === val) {
                 this.props.selectCameraFunction(camera);
             }
+            return camera;
         });
     }
 

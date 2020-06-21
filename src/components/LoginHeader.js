@@ -13,7 +13,7 @@ class LoginHeader extends React.Component {
                     <div className="bgImg2"/>
                 </div>
                 <div className="logoBlock">
-                    <img className="logoImg" src="../../image/logo.svg"/>
+                    <img className="logoImg" src="../../image/logo.svg" alt="logo"/>
                     <div className="logoTextBlock">
                         <span className="logoTitle"><em>Eagle</em>view</span>
                         <span className="logoSlog">{textFile.SmartCCTV}</span>
