@@ -18,6 +18,10 @@ div, input, span, select, option, button {
 body {
 }
 
+a {
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
 }

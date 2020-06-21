@@ -34,7 +34,7 @@ const toolBarButtons = [
         },
         {
             page: "logout",
-            linkPath: "/logout",
+            linkPath: "/login",
             linkIcon: <FaDoorOpen/>,
             linkName: "Выйти",
             linkActive: false,
