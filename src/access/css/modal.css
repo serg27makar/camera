@@ -1,0 +1,52 @@
+.modalBox {
+    height: 370px;
+    width: 560px;
+    background: #1d1f2d;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    border: 1px solid #5f78d3;
+    border-radius: 3px;
+}
+.titleModal {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    top: 30px;
+    position: relative;
+}
+.camerasList {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(8, 24px);
+    text-align: center;
+    padding: 50px;
+}
+.cameraListText {
+    cursor: pointer;
+}
+.cameraListTextGlove {
+    cursor: pointer;
+    color: #5f78d3;
+}
+.btnBlock {
+    width: 100%;
+    display: flex;
+    bottom: 30px;
+    position: absolute;
+}
+.okCancelBtn {
+    width: 100px;
+    height: 35px;
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.warningText {
+    color: red;
+    position: relative;
+    bottom: 50px;
+}

@@ -1,0 +1,43 @@
+.cameraScreen {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.viewCameras {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.firstCameraWithThree {
+    width: 66%;
+}
+.rightViewWithThree {
+    width: 34%;
+}
+.rightViewWithThree .cameraView {
+    height: 50%;
+}
+
+.threeItemView {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    margin: 6px;
+    display: flex;
+}
+
+.sixItemView {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 41vh);
+    margin: 6px;
+    width: 100%;
+    height: 100%;
+}
+.eightItemView {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 36vh);
+    margin: 6px;
+    width: 100%;
+    height: 100%;
+}
