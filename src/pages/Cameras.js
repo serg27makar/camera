@@ -16,12 +16,6 @@ class Cameras extends React.Component {
         this.props.setActionMainScreenFunction("camera")
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.cameras !== this.props.cameras) {
-            console.log(this)
-        }
-    }
-
     renderViewConstructor(cameras) {
         if (cameras.length === 0) {
             return this.viewOnce();

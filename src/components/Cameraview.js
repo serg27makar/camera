@@ -7,6 +7,7 @@ import {
     actionSetCamera,
 } from "../action";
 import {connect} from "react-redux";
+import textFile from "../access/resource/sharedText";
 
 class CameraView extends React.Component {
     constructor(props) {
@@ -66,7 +67,7 @@ class CameraView extends React.Component {
                         <div className="addCameraButton">
                             <div className="addBtnBlock">
                                 <div className="plusButton">+</div>
-                                <div className="textButton">Добавить камеру</div>
+                                <div className="textButton">{textFile.AddCamera}</div>
                             </div>
                         </div>
                     </div>
@@ -101,12 +102,6 @@ class CameraView extends React.Component {
                             )
                         })}
                     </div>
-                </div>
-            );
-        } else {
-            return (
-                <div className="cameraView">
-                   что-то пошло не так)))
                 </div>
             );
         }

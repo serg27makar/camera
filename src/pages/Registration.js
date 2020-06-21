@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {setActionMainScreen} from "../action";
 import LoginHeader from "../components/LoginHeader";
 import {Link} from "react-router-dom";
+import textFile from "../access/resource/sharedText";
 
 class Registration extends React.Component {
     constructor(props) {
@@ -17,8 +18,6 @@ class Registration extends React.Component {
         this.props.setActionMainScreenFunction("registration")
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {}
-
     submit() {
         this.props.history.push("/login");
     }
@@ -28,30 +27,30 @@ class Registration extends React.Component {
             <div className="registrationScreen">
                 <LoginHeader/>
                 <div className="formBox">
-                    <h1 className="titleLogin">Регистрация</h1>
+                    <h1 className="titleLogin">{textFile.Registration}</h1>
                     <label className="formLabel" htmlFor="userName">
-                        <span className="formInputLabel">Введите ваше имя *</span>
+                        <span className="formInputLabel">{textFile.EnterYourName}</span>
                         <input className="formInput" type="text" name="userName" placeholder="Name"/>
                     </label>
                     <label className="formLabel" htmlFor="email">
-                        <span className="formInputLabel">Введите ваш e-mail *</span>
+                        <span className="formInputLabel">{textFile.EnterYourEmail}</span>
                         <input className="formInput" type="email" name="email" placeholder="email"/>
                     </label>
                     <label className="formLabel" htmlFor="phone">
-                        <span className="formInputLabel">Введите ваш номер телефона *</span>
+                        <span className="formInputLabel">{textFile.EnterYourPhone}</span>
                         <input className="formInput" type="phone" name="phone" placeholder="phone"/>
                     </label>
                     <label className="formLabel" htmlFor="password">
-                        <span className="formInputLabel">Введите ваш пароль *</span>
+                        <span className="formInputLabel">{textFile.EnterYourPassword}</span>
                         <input className="formInput" type="password" name="password" placeholder="password"/>
                     </label>
                     <label className="formLabel" htmlFor="confirmPassword">
-                        <span className="formInputLabel">Повторите ваш пароль *</span>
+                        <span className="formInputLabel">{textFile.RepeatYourPassword}</span>
                         <input className="formInput" type="password" name="confirmPassword" placeholder="Confirm password"/>
                     </label>
-                    <span className="forgetText">Забыли пароль?</span>
-                    <button className="submitBtn" onClick={this.submit}>Зарегистрироваться</button>
-                    <div className="footerText">Уже есть аккаунт?<Link to={"/login"}><em> Авторизация</em></Link></div>
+                    <span className="forgetText">{textFile.ForgotPassword}</span>
+                    <button className="submitBtn" onClick={this.submit}>{textFile.SignUp}</button>
+                    <div className="footerText">{textFile.AlreadyHaveAaccount}<Link to={"/login"}><em>{textFile.Login}</em></Link></div>
                 </div>
             </div>
         );

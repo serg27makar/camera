@@ -5,11 +5,14 @@ import {setActionMainScreen} from "../action"
 import CaseEmergency from "../components/CaseEmergency"
 import ValuesCritical from "../components/ValuesCritical";
 import ChooseCamera from "../components/ChooseCamera";
+import textFile from "../access/resource/sharedText";
 
 class Settings extends React.Component {
+
     componentDidMount() {
         this.props.setActionMainScreenFunction("settings")
     }
+
     render() {
         return (
             <div className="settingsScreen">
@@ -19,18 +22,20 @@ class Settings extends React.Component {
                     <CaseEmergency/>
                 </div>
                 <div className="formButtonBlock">
-                    <button className="settingsButton saveSettings">Сохранить настройки</button>
-                    <button className="settingsButton cancelSettings">Отменить</button>
+                    <button className="settingsButton saveSettings">{textFile.SaveSettings}</button>
+                    <button className="settingsButton cancelSettings">{textFile.Cancel}</button>
                 </div>
             </div>
         );
     }
 }
+
 function MapStateToProps(state) {
     return {
         page: state.mainScreenInfo.page,
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return{
         setActionMainScreenFunction: (page) => {

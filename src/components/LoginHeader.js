@@ -2,6 +2,7 @@ import React from 'react';
 import '../access/css/login.css'
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import textFile from "../access/resource/sharedText";
 
 class LoginHeader extends React.Component {
     render() {
@@ -15,13 +16,13 @@ class LoginHeader extends React.Component {
                     <img className="logoImg" src="../../image/logo.svg"/>
                     <div className="logoTextBlock">
                         <span className="logoTitle"><em>Eagle</em>view</span>
-                        <span className="logoSlog">Умное видеонаблюдение</span>
+                        <span className="logoSlog">{textFile.SmartCCTV}</span>
                     </div>
                 </div>
-                <div className="aboutService">О сервисе</div>
-                <div className="aboutService">Часто задаваемые вопросы</div>
-                <Link to={"/login"}><div className="loginBtn">Войти</div></Link>
-                <Link to={"/registration"}><div className="registerBtn">Зарегистрироваться</div></Link>
+                <div className="aboutService">{textFile.AboutService}</div>
+                <div className="aboutService">{textFile.FrequentlyQuestions}</div>
+                <Link to={"/login"}><div className="loginBtn">{textFile.ToComeIn}</div></Link>
+                <Link to={"/registration"}><div className="registerBtn">{textFile.SignUp}</div></Link>
             </div>
         );
     }
@@ -33,10 +34,4 @@ function MapStateToProps(state) {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-
-    }
-};
-
-export default connect(MapStateToProps, mapDispatchToProps)(LoginHeader);
+export default connect(MapStateToProps)(LoginHeader);

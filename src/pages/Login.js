@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {setActionMainScreen} from "../action";
 import LoginHeader from "../components/LoginHeader";
 import {Link} from "react-router-dom";
+import textFile from "../access/resource/sharedText";
 
 class Login extends React.Component {
     constructor(props) {
@@ -17,10 +18,7 @@ class Login extends React.Component {
         this.props.setActionMainScreenFunction("login")
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {}
-
     submit() {
-        console.log("this", this)
         this.props.history.push("/camera")
     }
 
@@ -29,18 +27,18 @@ class Login extends React.Component {
             <div className="loginScreen">
                 <LoginHeader/>
                 <div className="formBox">
-                    <h1 className="titleLogin">Авторизация</h1>
+                    <h1 className="titleLogin">{textFile.Login}</h1>
                     <label className="formLabel" htmlFor="email">
-                        <span className="formInputLabel">Введите ваш e-mail *</span>
+                        <span className="formInputLabel">{textFile.EnterYourEmail}</span>
                         <input className="formInput" type="email" name="email" placeholder="email"/>
                     </label>
                     <label className="formLabel" htmlFor="password">
-                        <span className="formInputLabel">Введите ваш пароль *</span>
+                        <span className="formInputLabel">{textFile.EnterYourPassword}</span>
                         <input className="formInput" type="password" name="password" placeholder="password"/>
                     </label>
-                    <span className="forgetText">Забыли пароль?</span>
-                    <button className="submitBtn" onClick={this.submit}>Войти в личный кабинет</button>
-                    <div className="footerText">Еще не зарегистрированы?<Link to={"/registration"}><em> Регистрация</em></Link></div>
+                    <span className="forgetText">{textFile.ForgotPassword}</span>
+                    <button className="submitBtn" onClick={this.submit}>{textFile.LogInAccount}</button>
+                    <div className="footerText">{textFile.Registration}<Link to={"/registration"}><em>{textFile.LogInAccount}</em></Link></div>
 
                 </div>
             </div>
