@@ -27,8 +27,8 @@ class SavePeopleStateModal extends React.Component {
             <div className="modalBox">
                 <span className="titleModal">Save change?</span>
                 <div className="btnBlock">
-                    <button className="okCancelBtn" onClick={this.saveChange}>Save</button>
-                    <button className="okCancelBtn" onClick={this.cancelBtn}>Cancel</button>
+                    <button className="okCancelBtn okBtn" onClick={this.saveChange}>Save</button>
+                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>Cancel</button>
                 </div>
             </div>
         );
@@ -38,6 +38,7 @@ class SavePeopleStateModal extends React.Component {
 function MapStateToProps(state) {
     return {
         saveChangeModal: state.modalReducer.saveChangeModal,
+
     }
 }
 

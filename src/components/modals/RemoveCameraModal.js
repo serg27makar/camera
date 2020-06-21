@@ -37,8 +37,8 @@ class RemoveCameraModal extends React.Component {
             <div className="modalBox">
                 <span className="titleModal">Remove this camera?</span>
                 <div className="btnBlock">
-                    <button className="okCancelBtn" onClick={this.removeCamera}>Remove</button>
-                    <button className="okCancelBtn" onClick={this.cancelBtn}>Cancel</button>
+                    <button className="okCancelBtn okBtn" onClick={this.removeCamera}>Remove</button>
+                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>Cancel</button>
                 </div>
             </div>
         );

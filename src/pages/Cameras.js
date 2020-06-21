@@ -38,11 +38,11 @@ class Cameras extends React.Component {
             <div className="viewCameras">
                 <div className="threeItemView">
                     <div className="firstCameraWithThree">
-                        <CameraView item={this.props.cameras[0]} size={"bigSize"}/>
+                        <CameraView item={this.props.cameras[0]} size={"bigSize"} history={this.props.history}/>
                     </div>
                     {this.props.cameras[1] ?
                         <div className="rightViewWithThree">
-                            <CameraView item={this.props.cameras[1]} size={"middleSize"}/>
+                            <CameraView item={this.props.cameras[1]} size={"middleSize"} history={this.props.history}/>
                             <CameraView isViewEmpty={true}/>
                         </div> :
                         <div className="rightViewWithThree">
@@ -58,7 +58,7 @@ class Cameras extends React.Component {
             <div className="viewCameras">
                 <div className="sixItemView">
                     {this.props.cameras.map((item, index) => {
-                        return <CameraView item={item} key={index} size={"middleSize"}/>
+                        return <CameraView item={item} key={index} size={"middleSize"} history={this.props.history}/>
                     })}
                     <CameraView isViewEmpty={true}/>
                 </div>
@@ -71,7 +71,7 @@ class Cameras extends React.Component {
             <div className="viewCameras">
                 <div className="eightItemView">
                     {this.props.cameras.map((item, index) => {
-                        return <CameraView item={item} key={index} size={"smallSize"}/>
+                        return <CameraView item={item} key={index} size={"smallSize"} history={this.props.history}/>
                     })}
                     <CameraView isViewEmpty={true}/>
                 </div>

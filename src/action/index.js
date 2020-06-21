@@ -4,6 +4,7 @@ export const setActionMainScreen = (page) => {
         page: page
     }
 };
+
 export const actionSetCamera = (camera) => {
     return {
         type: 'SET_CAMERA',
@@ -16,6 +17,19 @@ export const actionRemoveCamera = (remCamera) => {
         remCamera: remCamera
     }
 };
+export const actionSelectCamera = (selectCamera) => {
+    return {
+        type: 'SELECT_CAMERA',
+        selectCamera: selectCamera
+    }
+};
+export const actionSettingsChange = (settingsChange) => {
+    return {
+        type: 'SETTINGS_CHANGE',
+        settingsChange: settingsChange
+    }
+};
+
 export const actionOpenCloseAddModal = () => {
     return {
         type: 'OPEN_CLOSE_ADD_MODAL'

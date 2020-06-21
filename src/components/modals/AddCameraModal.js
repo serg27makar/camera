@@ -3,6 +3,7 @@ import '../../access/css/modal.css'
 import {connect} from "react-redux";
 import {actionOpenCloseAddModal, actionSetCamera, setActionMainScreen} from "../../action"
 import camerasArr from "../../access/resource/camerasArr";
+import {isEmptyObject} from "../../access/resource/functionLib";
 
 class AddCameraModal extends React.Component {
 
@@ -16,16 +17,9 @@ class AddCameraModal extends React.Component {
         }
     }
 
-    isEmptyObject(obj) {
-        for (const i in obj) {
-            if (obj.hasOwnProperty(i)) return false;
-        }
-        return true;
-    }
-
     addBtn() {
         const currentArr = this.props.cameras;
-        if (!this.isEmptyObject(this.state.selectedCamera)) {
+        if (!isEmptyObject(this.state.selectedCamera)) {
             this.warningText("");
             currentArr.push(this.state.selectedCamera);
             this.props.setCameraFunction(currentArr);
@@ -91,8 +85,8 @@ class AddCameraModal extends React.Component {
                 </div>
                 <span className="warningText">{this.state.warningText}</span>
                 <div className="btnBlock">
-                    <button className="okCancelBtn" onClick={this.addBtn}>OK</button>
-                    <button className="okCancelBtn" onClick={this.cancelBtn}>Cancel</button>
+                    <button className="okCancelBtn okBtn" onClick={this.addBtn}>OK</button>
+                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>Cancel</button>
                 </div>
             </div>
         );

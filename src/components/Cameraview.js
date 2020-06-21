@@ -3,7 +3,7 @@ import '../access/css/cameraView.css'
 import {
     actionOpenCloseAddModal,
     actionOpenCloseRemoveModal,
-    actionRemoveCamera,
+    actionRemoveCamera, actionSelectCamera,
     actionSetCamera,
 } from "../action";
 import {connect} from "react-redux";
@@ -37,6 +37,11 @@ class CameraView extends React.Component {
     removeCamera(remCamera) {
         this.props.removeCameraFunction(remCamera);
         this.props.openRemoveCameraModalFunction();
+    }
+
+    optionCamera(selectCamera) {
+        this.props.selectCameraFunction(selectCamera);
+        this.props.history.push("/settings");
     }
 
     peopleBar() {
@@ -82,7 +87,7 @@ class CameraView extends React.Component {
                         </div>
                     </div>
                     <div className="btnOptionBlockWrap">
-                        <div className={"btnOptionBlock " + this.props.size}>
+                        <div className={"btnOptionBlock " + this.props.size} onClick={() => this.optionCamera(this.props.item)}>
                             <img className={"btnOptionImg " + this.props.size} src="./image/pen.svg"/>
                         </div>
                         <div className={"btnOptionBlock " + this.props.size} onClick={() => this.removeCamera(this.props.item)}>
@@ -121,6 +126,9 @@ const mapDispatchToProps = dispatch => {
         },
         removeCameraFunction: (item) => {
             dispatch(actionRemoveCamera(item))
+        },
+        selectCameraFunction: (item) => {
+            dispatch(actionSelectCamera(item))
         },
         openAddCameraModalFunction: () => {
             dispatch(actionOpenCloseAddModal())

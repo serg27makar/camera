@@ -38,12 +38,23 @@
     position: absolute;
 }
 .okCancelBtn {
-    width: 100px;
+    width: 150px;
     height: 35px;
     margin: auto;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(95, 120, 211, 0.4);
+    border: 1px solid rgba(95, 120, 211, 0.4);
+    border-radius: 3px;
+    outline: none;
+    color: white;
+}
+.okBtn {
+    background: #5F78D3;
+}
+.cancelBtn {
+    background: none;
 }
 .warningText {
     color: red;
