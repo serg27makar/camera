@@ -48,7 +48,6 @@ class Registration extends React.Component {
                         <span className="formInputLabel">{textFile.RepeatYourPassword}</span>
                         <input className="formInput" type="password" name="confirmPassword" placeholder="Confirm password"/>
                     </label>
-                    <span className="forgetText">{textFile.ForgotPassword}</span>
                     <button className="submitBtn" onClick={this.submit}>{textFile.SignUp}</button>
                     <div className="footerText">{textFile.AlreadyHaveAaccount}<Link to={"/login"}><em>{textFile.Login}</em></Link></div>
                 </div>

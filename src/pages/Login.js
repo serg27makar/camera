@@ -38,7 +38,7 @@ class Login extends React.Component {
                     </label>
                     <span className="forgetText">{textFile.ForgotPassword}</span>
                     <button className="submitBtn" onClick={this.submit}>{textFile.LogInAccount}</button>
-                    <div className="footerText">{textFile.Registration}<Link to={"/registration"}><em>{textFile.LogInAccount}</em></Link></div>
+                    <div className="footerText">{textFile.NotMemberYet}<Link to={"/registration"}><em>{textFile.Registration}</em></Link></div>
 
                 </div>
             </div>
