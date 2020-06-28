@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {actionOpenCloseAddModal, actionSetCamera} from "../../action"
 import camerasArr from "../../access/resource/camerasArr";
 import {isEmptyObject} from "../../access/resource/functionLib";
+import textFile from "../../access/resource/sharedText";
 
 class AddCameraModal extends React.Component {
 
@@ -80,7 +81,7 @@ class AddCameraModal extends React.Component {
         }
         return (
             <div className="modalBox">
-                <span className="titleModal">Choose the camera</span>
+                <span className="titleModal">{textFile.ChooseCamera}</span>
                 <div className="camerasList">
                     {camerasArr.map((camera) => {
                         return this.renderCameraName(camera)
@@ -88,8 +89,8 @@ class AddCameraModal extends React.Component {
                 </div>
                 <span className="warningText">{this.state.warningText}</span>
                 <div className="btnBlock">
-                    <button className="okCancelBtn okBtn" onClick={this.addBtn}>OK</button>
-                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>Cancel</button>
+                    <button className="okCancelBtn okBtn" onClick={this.addBtn}>{textFile.OK}</button>
+                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>{textFile.Cancel}</button>
                 </div>
             </div>
         );

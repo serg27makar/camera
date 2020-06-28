@@ -21,7 +21,7 @@ class LoginHeader extends React.Component {
                 </div>
                 <div className="aboutService">{textFile.AboutService}</div>
                 <div className="aboutService">{textFile.FrequentlyQuestions}</div>
-                <Link to={"/login"}><div className="loginBtn">{textFile.ToComeIn}</div></Link>
+                <Link to={"/login"}><div className="loginBtn">{textFile.SignIn}</div></Link>
                 <Link to={"/registration"}><div className="registerBtn">{textFile.SignUp}</div></Link>
             </div>
         );

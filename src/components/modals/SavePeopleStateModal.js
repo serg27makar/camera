@@ -2,6 +2,7 @@ import React from 'react';
 import '../../access/css/modal.css'
 import {connect} from "react-redux";
 import {actionOpenCloseSaveChangeModal} from "../../action"
+import textFile from "../../access/resource/sharedText";
 
 class SavePeopleStateModal extends React.Component {
 
@@ -25,10 +26,10 @@ class SavePeopleStateModal extends React.Component {
         }
         return (
             <div className="modalBox">
-                <span className="titleModal">Save change?</span>
+                <span className="titleModal">{textFile.SaveChange}</span>
                 <div className="btnBlock">
-                    <button className="okCancelBtn okBtn" onClick={this.saveChange}>Save</button>
-                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>Cancel</button>
+                    <button className="okCancelBtn okBtn" onClick={this.saveChange}>{textFile.Save}</button>
+                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>{textFile.Cancel}</button>
                 </div>
             </div>
         );

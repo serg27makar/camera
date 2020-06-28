@@ -2,6 +2,7 @@ import React from 'react';
 import '../../access/css/modal.css'
 import {connect} from "react-redux";
 import {actionOpenCloseRemoveModal, actionSetCamera} from "../../action"
+import textFile from "../../access/resource/sharedText";
 
 class RemoveCameraModal extends React.Component {
 
@@ -36,10 +37,10 @@ class RemoveCameraModal extends React.Component {
         }
         return (
             <div className="modalBox">
-                <span className="titleModal">Remove this camera?</span>
+                <span className="titleModal">{textFile.RemoveCamera}</span>
                 <div className="btnBlock">
-                    <button className="okCancelBtn okBtn" onClick={this.removeCamera}>Remove</button>
-                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>Cancel</button>
+                    <button className="okCancelBtn okBtn" onClick={this.removeCamera}>{textFile.Remove}</button>
+                    <button className="okCancelBtn cancelBtn" onClick={this.cancelBtn}>{textFile.Cancel}</button>
                 </div>
             </div>
         );
